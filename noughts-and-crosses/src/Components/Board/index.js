@@ -1,11 +1,14 @@
 import React from "react";
 import Square from "../Square";
 
-function Board({ grid }) {
+function Board({ gridArray, handleSquareClick }) {
 	return (
 		<>
-			{grid.map((value) => (
-				<Square value={value} />
+			{gridArray.map((value, index) => (
+				<Square
+					value={value}
+					handleSquareClick={() => handleSquareClick(index)}
+				/>
 			))}
 		</>
 	);
